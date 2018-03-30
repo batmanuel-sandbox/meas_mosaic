@@ -38,7 +38,7 @@ import lsst.pex.config                  as pexConfig
 import lsst.pipe.base                   as pipeBase
 
 from lsst.log import Log
-from lsst.meas.algorithms import LoadIndexedReferenceObjectsTask
+from lsst.meas.algorithms import LoadPanstarrsObjectsTask
 from lsst.meas.base.forcedPhotCcd import PerTractCcdDataIdContainer
 from lsst.pipe.tasks.colorterms import ColortermLibrary
 from . import utils as mosaicUtils
@@ -152,7 +152,7 @@ class MosaicConfig(pexConfig.Config):
         default=True)
     loadAstrom = pexConfig.ConfigurableField(
         doc="Configuration for astrometry reference object loading",
-        target=LoadIndexedReferenceObjectsTask)
+        target=LoadPanstarrsObjectsTask)
     doColorTerms = pexConfig.Field(
         doc="Apply color terms as part of solution?",
         dtype=bool,
